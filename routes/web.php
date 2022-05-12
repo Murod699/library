@@ -29,4 +29,6 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
     //Books route
     Route::resource('books/category', App\Http\Controllers\Admin\BooksCategoryController::class);
+    //Authors route
+    Route::resource('/authors', App\Http\Controllers\Admin\AuthorsController::class);
 });

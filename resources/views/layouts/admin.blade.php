@@ -60,8 +60,8 @@
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Mualliflar <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="add-author.php">Muallif qo`shish</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="manage-authors.php">Mualliflarni boshqarish</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('authors.create')}}">Muallif qo`shish</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('authors.index')}}">Mualliflarni boshqarish</a></li>
                                 </ul>
                             </li>
                 <li>
@@ -100,6 +100,27 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Boshqaruvdan chiqasizmi?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Agar tizimdan chiqishni hohlasangiz "Ha" tugmasini bosing.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Bekor</button>
+                    <form method="POST" action="{{route('logout')}}">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Ha</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
    <!-- FOOTER SECTION END-->
    <script src="/assets/js/jquery-1.10.2.js"></script>
    <!-- BOOTSTRAP SCRIPTS  -->
