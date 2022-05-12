@@ -26,4 +26,7 @@ Route::middleware('auth')->prefix('admin')->group(function(){
     Route::get('/', function(){
         return view('admin.dashboard');
     })->name('dashboard');
+
+    //Books route
+    Route::resource('books/category', App\Http\Controllers\Admin\BooksCategoryController::class);
 });
