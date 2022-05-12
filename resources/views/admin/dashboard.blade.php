@@ -1,3 +1,9 @@
+@php
+ use App\Models\Author;
+ use App\Models\BooksCategory;
+ $author = Author::get();
+ $cat = BooksCategory::get();   
+@endphp
 @extends('layouts/admin')
 @section('content')
   <div class="content-wrapper">
@@ -39,23 +45,22 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="manage-authors.php">
+                            <a href="{{route('authors.index')}}">
                                 <div class="col-md-3 col-sm-3 col-xs-6">
                                     <div class="alert alert-success back-widget-set text-center">
                                         <i class="fa fa-user fa-5x"></i>
-                                        <h3>11</h3>
+                                        <h3>{{count($author)}}</h3>
                                         Mualliflar ro`yhati
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="row">
-                            <a href="manage-categories.php">            
+                            <a href="{{route('category.index')}}">            
                                 <div class="col-md-3 col-sm-3 rscol-xs-6">
                                     <div class="alert alert-info back-widget-set text-center">
                                         <i class="fa fa-file-archive-o fa-5x"></i>
-
-                                        <h3>6 </h3>
+                                        <h3>{{count($cat)}}</h3>
                                     Toifalar ro`yhati
                                     </div>
                                 </div>
