@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Book;
 
 class BooksCategory extends Model
 {
@@ -17,5 +18,8 @@ class BooksCategory extends Model
     ];
     public function scopeActive(){
         return $this->where('status', '=', self::STATUS_ACTIVE)->latest();
+    }
+    public function getBook(){
+        return $this->belongsTo(Book::class, 'cat_id', 'id');
     }
 }
