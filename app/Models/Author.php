@@ -12,4 +12,8 @@ class Author extends Model
     public $fillable = [
         'author_name'
     ];
+
+    public function getAuthor(){
+        return $this->hasMany(Book::class, 'author_id', 'id');
+    }
 }

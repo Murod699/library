@@ -20,6 +20,6 @@ class BooksCategory extends Model
         return $this->where('status', '=', self::STATUS_ACTIVE)->latest();
     }
     public function getBook(){
-        return $this->belongsTo(Book::class, 'cat_id', 'id');
+        return $this->hasMany(Book::class, 'cat_id', 'id');
     }
 }
