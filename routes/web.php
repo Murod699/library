@@ -27,8 +27,10 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         return view('admin.dashboard');
     })->name('dashboard');
 
-    //Books route
+    //BooksCategory route
     Route::resource('books/category', App\Http\Controllers\Admin\BooksCategoryController::class);
     //Authors route
     Route::resource('/authors', App\Http\Controllers\Admin\AuthorsController::class);
+    //Books route
+    Route::resource('books', App\Http\Controllers\Admin\BooksController::class);
 });

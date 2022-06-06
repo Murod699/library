@@ -1,6 +1,8 @@
 @php
  use App\Models\Author;
  use App\Models\BooksCategory;
+ use App\Models\Book;
+ $books = Book::get();
  $author = Author::get();
  $cat = BooksCategory::get();   
 @endphp
@@ -17,11 +19,11 @@
                         </div>
              
                         <div class="row">
-                            <a href="manage-books.php">
+                            <a href="{{route('books.index')}}">
                                 <div class="col-md-3 col-sm-3 col-xs-6">
                                     <div class="alert alert-success back-widget-set text-center">
                                         <i class="fa fa-book fa-5x"></i>
-                                        <h3>9</h3>
+                                        <h3>{{count($books)}}</h3>
                                         Kitoblar ro`yhati
                                     </div>
                                 </div>
